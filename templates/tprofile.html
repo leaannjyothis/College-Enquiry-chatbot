@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-bold mb-4 text-center">Profile</h2>
+        {% if faculty.profilepic %}
+            <img src="{{ faculty.profilepic.url }}" class="w-24 h-24 rounded-full mx-auto mb-4">
+        {% endif %}
+        <p><strong>Name:</strong> {{ faculty.name }}</p>
+        <p><strong>Gender:</strong> {{ faculty.gender }}</p>
+        <p><strong>Department:</strong> {{ faculty.department }}</p>
+        <p><strong>Phone:</strong> {{ faculty.phno }}</p>
+        <p><strong>Email:</strong> {{ faculty.email }}</p>
+        <a href="{% url 'edit_profile' %}" class="block text-center bg-blue-500 text-white p-2 mt-4 rounded hover:bg-blue-600">Edit Profile</a>
+        <a href="{% url 'thome' %}" class="block text-center bg-blue-500 text-white p-2 mt-2 rounded hover:bg-blue-600">back to home</a>
+        <br>
+        <a href="{% url 'logout1' %}" class="block text-center bg-red-500 text-white p-2 mt-2 rounded hover:bg-red-600">Logout</a>
+    </div>
+</body>
+</html>

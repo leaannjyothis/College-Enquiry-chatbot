@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .actions a {
+            text-decoration: none;
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Admission No.</th>
+                    <th>Department</th>
+                    <th>Gender</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in u %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ user.user.first_name }} {{ user.user.last_name }}</td>
+                    <td>{{ user.user.email }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.adno }}</td>
+                    <td>
+                        {% if user.dep == "1" %} BTech in CSE
+                        {% elif user.dep == "2" %} BTech in EC
+                        {% elif user.dep == "3" %} BTech in CE
+                        {% elif user.dep == "4" %} BTech in ME
+                        {% elif user.dep == "5" %} BTech in EEE
+                        {% elif user.dep == "6" %} BTech in AI
+                        {% elif user.dep == "7" %} MBA
+                       <!-- {% elif user.dep == "8" %} MTech in CE -->
+                        {% else %} Unknown {% endif %}
+                    </td>
+                    <td>
+                        {% if user.gen == "f" %} Male
+                        {% elif user.gen == "m" %} Female
+                        {% elif user.gen == "o" %} Others
+                        {% else %} Unknown {% endif %}
+                    </td>
+                    <td class="actions">
+                        <a href="/edit_user/{{ user.id }}/" style="color: #dc3545;">edit</a>
+                        <a href="/delete_user/{{ user.id }}/" style="color: #dc3545;">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="9" style="text-align: center;">No users found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

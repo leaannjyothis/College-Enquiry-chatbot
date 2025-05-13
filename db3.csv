@@ -1,0 +1,109 @@
+"default","Welcome to our college"
+"understand","I'm sorry, I didn't understand your request. Could you please rephrase or provide more information so that I can assist you better?"
+"Hii","Hii"
+"Hi there!","Hello! How can I assist you today?"
+"Hi, how are you?"," I'm just a machine, so I don't have feelings, but I'm here to assist you. What can I help you with?"
+"Hello chatbot","Hi! What can I do for you today?"
+"Hello, what's up?","Not much, just waiting to assist you. What can I help you with?"
+"Hi, can you help me with something?","Of course! What do you need help with?"
+"Programmes offered","BTech in
+1.Electronic engineering
+2.Civil Engineering
+3.Computer science
+4.Mechanical Engineering
+5.Artificial Intelligence And Machine Learning
+6.Electrical And Electronics Engineering,
+PG courses
+1.MCA
+2.MTech in Civil engineering"
+"Add on courses","Tally Essential,SAP Logistics with Supply Chain Management,Data Science(Python,ML and Ai),Digital Marketing,Business Analyst"
+"UG courses","BTech in
+1.Electronic engineering
+2.Civil Engineering
+3.Computer science
+4.Mechanical Engineering
+5.Artificial Intelligence And Machine Learning
+6.Electrical And Electronics Engineering"
+"PG courses","PG courses
+1.MCA
+2.MTech in Civil engineering"
+"Good Morning","Good Morning🌞"
+"Good Afternoon","Good Afternoon🕑"
+"Good Evening","Good Evening🌇"
+"Good Night","Good Night😴"
+"contact number","Who do you want?"
+"Exam Timetable","13/03/23 - Android Programming, 15/03/23- Operating System, 17/03/23- Computer networks, 24/03/23- Software Testing & Assurance"
+"CSE semester_1 subjects","Mathematics,Chemistry,Mechanics,Basics of Civil & Mchanical Engineering,Life skill"
+"CSE semester_2 subjects","Mathematics,Physics,Engineering Graphics,Basics of Electrical & Electronics Engineering,Professional Communication,Basics of Python Programming"
+"CSE semester_3 subjects","Discrete Mathematical Structures,Object Oriented Programming using Java,Logic System Design,Data Structure,Design Engineering,Sustainable Engineering"
+"CSE semester_4 subjects","Graphics Theory, Database Management System ,Computer Organization and Architecture,Operating System,Professional Ethics,Constitution Of India"
+"CSE semester_5 subjects","Formal Languages and Automata Theory,Computer Networks,System Software,Microprocessors and Microcontrollers,Managemant of Software System,Disaster Management"
+"CSE semester_6 subjects","Compiler Design,Algorithm Analysis and Design,Computer Graphics ang Image Processing,Elective 1,Industrial Ecoomics & Foreign Trade"
+"CSE semester_7 subjects","Artificial Intelligence,Industrial Safety Engineering,Elective 2,Open Elective"
+"CSE semester_8 subjects","Distributed Computing,Elective 3,Elective 4,Elective 5" 
+"syllabus of Operating system","Unit I [12T + 4P]
+Operating System - Objectives and functions - The Evolution of Operating Systems: Serial Processing, Simple batch
+Systems, Multi Programmed batch Systems, Time Sharing Systems, Parallel Systems, Distributed Systems, Real time
+systems. Definition of Process, Process States, Process Control Block, Operations on Process, Process
+Communication, Communication in Client server System, Basic concepts of threads, Concurrency, Principles of
+Concurrency, Mutual exclusion, Semaphores, Messages, Dead lock: Prevention, Detection, Avoidance.
+Unit II [13T + 3P]
+Linux Shell Programming: Introduction – Shells available in Unix: Bourne shell (sh), C shell (csh), TC shell (tcsh),
+Korn shell (ksh), Bourne Again SHell (bash). Bash: special characters – getting help – man pages – Linux Directory
+Layout – Command for Navigating the Linux Filesystems: pwd, cd, ls, file, cat, cp, mv, mkdir, rmdir, whereis – Piping
+and Redirection - Informational Commands: ps, w, id, free – clear, echo, more. File permissions – Setting Permissions
+– Making a file executable. Creating shell programs: comments, variables, operators (arithmetic, relational, logical) – single and double quotes - read – echo – test - conditional commands, iterative commands – break – continue -
+evaluating expressions using expr, bc – strings – grep – arrays.
+Unit III [13T + 3P]
+CPU Scheduling: Scheduling Criteria, Scheduling algorithms: FCFS, SJF, Priority, RR, Multilevel, Feedback Queue -
+Process synchronization, The Critical Section Problem, Synchronization Hardware, Classical Problems of
+Synchronization: Reader Writer, Dining Philosopher. File and Database System, File System, Functions of
+organization, Allocation and Free Space Management.
+Unit IV [13T + 3P]
+Memory Management, Address Binding, Logical Vs Physical Address Space, Dynamic Loading, Dynamic Linking
+and Shared Libraries, Overlays, Swapping, Contiguous Memory allocation, Paging, Segmentation, Virtual memory,
+Demand Paging, Page Replacement, Thrashing.
+Unit V [13 T + 3 P]
+Protection and security: policy and mechanism, authentication, authorization. Mobile OS: Concepts, history, features,
+architecture, future scope. Case studies: Android, UNIX kernel and Microsoft Windows NT (concepts only)."
+"mark of twaubca008","56"
+"weather","The weather today is sunny 🌞"
+"Upcoming Activities","The commencement of the university exam, Christmas celebration, and college magazine publishing."
+"register for the events?","You can register online through our website or at the event venue. Need the link? 🖱️"
+"bus pass","Yes! Bus passes are available at a discount. Would you like to know how to purchase one? 🚌"
+"exam","Here’s the exam schedule for this semester: 📚 Math Exam: December 1, 2024 Science Exam: December 5, 2024 History Exam: December 10, 2024"
+"timetable?","You can download the latest timetable here: http://127.0.0.1:8000/timetable/"
+"fee structure?","You can download the latest fee structure here: http://127.0.0.1:8000/fees/"
+"syllabus structure?","You can download the latest syllabus structure here: http://127.0.0.1:8000/fees/"
+"workshops","Yes, check these out: 🎨 Photography Workshop: November 12, 2024 Coding Bootcamp: November 18-19, 2024 Cooking Class: November 22, 2024"
+"When does registration close?","The registration for all events closes on November 30, 2024. Don’t miss it! ⏰"
+"student bus pass","You can apply online or visit the transport office. Would you like assistance with the application process? 📝"
+"Can I receive updates on future events?","Absolutely! You can sign up for our newsletter for the latest updates. Interested? 📥"
+"academic resources libraries?","Students can access our extensive library and online resources through the college portal. Need help navigating it? 📚"
+"Internship for engineering students?","We have partnerships with various companies offering internships in software development, civil engineering, and mechanical design. 📈"
+"Placement drive schedule?","Placement drives are typically scheduled in the last semester, usually around March and April. Stay tuned for updates! 🚀"
+"Engineering student clubs?","Yes! We have several clubs, including the Robotics Club, IEEE Student Chapter, and the Civil Engineering Society. Join us for hands-on projects! 🤖"
+"Lab facilities","We have state-of-the-art labs for electronics, computer science, and mechanical engineering, equipped with the latest technology and tools."
+"Tuitionfee of CSE","45000"
+"Tuitionfee of AIML","48000"
+"Tuitionfee of ME","28000"
+"Tuitionfee of CE","38000"
+"Tuitionfee of EC","40000"
+"Tuitionfee of EEE","37000"
+"Tuitionfee of MCA","38000"
+"Tuitionfee of MTECH","48000"
+"infrastructure","The college has excellent infrastructure, well-experienced faculty, separate hostel facilities for ladies and gents, internet connectivity, and a suitable learning environment."
+"faculty described","The faculty is well-experienced."
+"hostel facilities","Yes, it provides separate hostel facilities for ladies and gents."
+"hostel","Yes, it provides separate hostel facilities for ladies and gents."
+"internet connectivity","Yes, it provides internet connectivity."
+"fee wifi","The fee for internet services is 2000 for an year."
+"location","It is located in Vazhakulam."
+"facility","VJCET provide a range of facilities to support students' academic and personal growth. These include well-equipped classrooms, advanced laboratories, a comprehensive library, and computer centers for technical learning. Accommodation options like hostels, along with canteens, ensure student comfort. Sports facilities, gyms, and cultural halls promote extracurricular activities. Career support services such as placement cells, counseling, and alumni networks prepare students for professional success. Additionally, medical centers, transport services, and security ensure student safety, while eco-friendly initiatives contribute to a sustainable campus environment."
+"accreditation","Yes, VJCET is accredited by the following organizations: NAAC (National Assessment and Accreditation Council) – VJCET has been accredited with an 'A' grade by NAAC. NBA (National Board of Accreditation) – Selected B.Tech programs are accredited by NBA, ensuring they meet high educational and professional standards. AICTE (All India Council for Technical Education) – All the programs at VJCET are approved by AICTE. APJ Abdul Kalam Technological University (KTU) – VJCET is affiliated with KTU, which governs the academic regulations and syllabus."
+"accredited","Yes, VJCET is accredited by the following organizations: NAAC (National Assessment and Accreditation Council) – VJCET has been accredited with an 'A' grade by NAAC. NBA (National Board of Accreditation) – Selected B.Tech programs are accredited by NBA, ensuring they meet high educational and professional standards. AICTE (All India Council for Technical Education) – All the programs at VJCET are approved by AICTE. APJ Abdul Kalam Technological University (KTU) – VJCET is affiliated with KTU, which governs the academic regulations and syllabus."
+"placement","VJCET has a dedicated placement cell that facilitates recruitment drives with various reputed companies. The college boasts a strong placement record, with students securing positions in leading organizations. For detailed placement statistics and information about recruiting companies, please visit the official VJCET website or contact the placement cell directly."
+"WIFI","Yes, VJCET offers campus-wide Wi-Fi access to all students and staff. High-speed internet is available in classrooms, laboratories, hostels, and the library, ensuring seamless access to academic resources and online learning platforms."
+"internet","Yes, VJCET offers campus-wide Wi-Fi access to all students and staff. High-speed internet is available in classrooms, laboratories, hostels, and the library, ensuring seamless access to academic resources and online learning platforms."
+"international exchange programs","VJCET has partnerships with several international universities for student exchange programs and collaborative research projects. Students have the opportunity to study abroad for a semester or participate in international conferences and workshops."
+

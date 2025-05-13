@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <div class="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-center">Library Books</h2>
+
+        <!-- Search Bar -->
+        <div class="mb-4 flex justify-end">
+            <input type="text" id="searchInput" placeholder="Search books..." 
+                   class="border border-gray-300 p-2 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 w-1/3">
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-blue-500 text-white">
+                        <th class="border border-gray-300 p-2">Acc.No</th>
+                        <th class="border border-gray-300 p-2">Acc.Date</th>
+                        <th class="border border-gray-300 p-2">Title</th>
+                        <th class="border border-gray-300 p-2">Author</th>
+                        <th class="border border-gray-300 p-2">Publisher</th>
+                        <th class="border border-gray-300 p-2">Call No</th>
+                        <th class="border border-gray-300 p-2">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="bookTableBody">
+                    {% for book in page_obj %}
+                    <tr class="border border-gray-300 hover:bg-gray-200">
+                        <td class="border border-gray-300 p-2">{{ book.AccNo }}</td>
+                        <td class="border border-gray-300 p-2">{{ book.AccDate }}</td>
+                        <td class="border border-gray-300 p-2">{{ book.Title }}</td>
+                        <td class="border border-gray-300 p-2">{{ book.Author }}</td>
+                        <td class="border border-gray-300 p-2">{{ book.Publisher }}</td>
+                        <td class="border border-gray-300 p-2">{{ book.Callno }}</td>
+                        <td class="border border-gray-300 p-2">{{ book.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-4 flex justify-center space-x-2">
+            {% if page_obj.has_previous %}
+                <a href="?page=1" class="px-4 py-2 bg-gray-300 rounded-lg">First</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="px-4 py-2 bg-gray-300 rounded-lg">Previous</a>
+            {% endif %}
+
+            <span class="px-4 py-2 bg-blue-500 text-white rounded-lg">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="px-4 py-2 bg-gray-300 rounded-lg">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="px-4 py-2 bg-gray-300 rounded-lg">Last</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Search Functionality -->
+    <script>
+        document.getElementById("searchInput").addEventListener("keyup", function() {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll("#bookTableBody tr");
+
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(filter) ? "" : "none";
+            });
+        });
+    </script>
+
+</body>
+</html>

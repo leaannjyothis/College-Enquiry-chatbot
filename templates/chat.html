@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate - Your Academic Helper</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .chat-container {
+            width: 90%;
+            max-width: 1200px;
+            height: 85vh;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #00a8e8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-body {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background-color: #f4f6f8;
+            font-size: 18px;
+        }
+        .message {
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            max-width: 85%;
+            word-wrap: break-word;
+            line-height: 1.5;
+            user-select: text;
+            position: relative;
+        }
+        .user-message {
+            background-color: #dcf8c6;
+            margin-left: auto;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #fff;
+            margin-right: auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-footer {
+            padding: 20px;
+            background-color: #fff;
+            border-top: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+        #message-input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+            margin-right: 15px;
+        }
+        button {
+            padding: 15px 30px;
+            background-color: #00a8e8;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #007bbf;
+        }
+        .copy-btn {
+            padding: 8px 15px;
+            background-color: #28a745;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .copy-btn:hover {
+            background-color: #218838;
+        }
+        #sound-toggle {
+            padding: 10px 20px;
+            background-color: #ff4444;
+            font-size: 14px;
+        }
+        #sound-toggle.on {
+            background-color: #28a745;
+        }
+        #voice-btn {
+            padding: 15px;
+            background-color: #ff8800;
+            margin-right: 15px;
+        }
+        #voice-btn.active {
+            background-color: #cc6600;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <span>StudyMate - Your Engineering Buddy</span>
+            <button id="sound-toggle" onclick="toggleSound()">Sound Off</button>
+        </div>
+        <div id="chat-body" class="chat-body">
+            <div class="message bot-message">
+                <span>Yo! I’m StudyMate, your engineering pal. What’s up? Need help with something?</span>
+                <button class="copy-btn" onclick="copyText(this.previousElementSibling.textContent)">Copy</button>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <button id="voice-btn" onclick="toggleVoice()">🎤</button>
+            <input id="message-input" type="text" placeholder="Ask me anything...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let isSoundOn = true; // Track sound state
+        let currentUtterance = null; // Store current speech for cancellation
+        let recognition = null; // Speech recognition instance
+        let isRecognizing = false; // Track if voice input is active
+
+        // Initialize Speech Recognition
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = false; // Stops after one complete input
+            recognition.interimResults = false; // Only final results
+            recognition.lang = 'en-US';
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                const input = document.getElementById('message-input');
+                input.value = transcript; // Set transcribed text in the input box
+                stopVoice(); // Stop recording after transcription
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                stopVoice();
+                alert('Voice recognition failed, bruh. Try again.');
+            };
+
+            recognition.onend = () => {
+                stopVoice();
+            };
+        } else {
+            console.warn('Speech Recognition API not supported, bruh.');
+            document.getElementById('voice-btn').style.display = 'none'; // Hide if unsupported
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatBody = document.getElementById('chat-body');
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user-message';
+            userMsg.textContent = message;
+            chatBody.appendChild(userMsg);
+
+            input.value = '';
+
+            const response = await fetch('/chatmate/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({ message: message })
+            });
+            const data = await response.json();
+
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message bot-message';
+            botMsg.innerHTML = `<span>${data.response}</span><button class="copy-btn" onclick="copyText(this.previousElementSibling.textContent)">Copy</button>`;
+            chatBody.appendChild(botMsg);
+
+            if (isSoundOn) {
+                if (currentUtterance) {
+                    window.speechSynthesis.cancel();
+                }
+                currentUtterance = new SpeechSynthesisUtterance(data.response);
+                currentUtterance.lang = 'en-US';
+                currentUtterance.pitch = 1;
+                currentUtterance.rate = 1;
+                currentUtterance.onend = () => { currentUtterance = null; };
+                window.speechSynthesis.speak(currentUtterance);
+            }
+
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard, bruh!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        function toggleSound() {
+            const soundToggle = document.getElementById('sound-toggle');
+            isSoundOn = !isSoundOn;
+            if (!isSoundOn && currentUtterance) {
+                window.speechSynthesis.cancel();
+                currentUtterance = null;
+            }
+            soundToggle.textContent = isSoundOn ? 'Sound Off' : 'Sound On';
+            soundToggle.className = isSoundOn ? '' : 'on';
+        }
+
+        function toggleVoice() {
+            if (!recognition) return;
+
+            if (isRecognizing) {
+                stopVoice();
+            } else {
+                startVoice();
+            }
+        }
+
+        function startVoice() {
+            const voiceBtn = document.getElementById('voice-btn');
+            voiceBtn.classList.add('active');
+            voiceBtn.textContent = '🎙️ Stop';
+            isRecognizing = true;
+            recognition.start();
+        }
+
+        function stopVoice() {
+            const voiceBtn = document.getElementById('voice-btn');
+            voiceBtn.classList.remove('active');
+            voiceBtn.textContent = '🎙️';
+            isRecognizing = false;
+            if (recognition) recognition.stop();
+        }
+
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        document.getElementById('message-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

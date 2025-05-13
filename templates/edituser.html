@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <h2>Basic Information</h2>
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" value="{{ e.user.first_name }}">
+
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" value="{{ e.user.last_name }}">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="{{ e.user.email }}">
+
+            <h2>Additional Information</h2>
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address" value="{{ e.address }}">
+
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" value="{{ e.phone }}">
+
+            <label for="adno">Admission Number</label>
+            <input type="text" name="adno" id="adno" value="{{ e.adno }}">
+
+            <label for="dep">Department</label>
+            <select name="dep" id="dep">
+                <option value="1" {% if e.dep == '1' %}selected{% endif %}>BTech in CSE</option>
+                <option value="2" {% if e.dep == '2' %}selected{% endif %}>BTech in EC</option>
+                <option value="3" {% if e.dep == '3' %}selected{% endif %}>BTech in CE</option>
+                <option value="4" {% if e.dep == '4' %}selected{% endif %}>BTech in ME</option>
+                <option value="5" {% if e.dep == '5' %}selected{% endif %}>BTech in EEE</option>
+                <option value="6" {% if e.dep == '6' %}selected{% endif %}>BTech in AI</option>
+                <option value="7" {% if e.dep == '7' %}selected{% endif %}>MBA</option>
+                <option value="8" {% if e.dep == '8' %}selected{% endif %}>BTech in CSD</option>
+            </select>
+
+            <label for="gen">Gender</label>
+            <select name="gen" id="gen">
+                <option value="f" {% if e.gen == 'f' %}selected{% endif %}>Male</option>
+                <option value="m" {% if e.gen == 'm' %}selected{% endif %}>Female</option>
+                <option value="o" {% if e.gen == 'o' %}selected{% endif %}>Other</option>
+            </select>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

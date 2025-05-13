@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-lg w-96">
+        {% csrf_token %}
+        <h2 class="text-2xl font-bold mb-4 text-center">Edit Profile</h2>
+        <input type="text" name="name" value="{{ faculty.name }}" class="w-full p-2 mb-4 border rounded">
+        <select name="gender" class="w-full p-2 mb-4 border rounded">
+            <option value="MALE" {% if faculty.gender == 'MALE' %}selected{% endif %}>Male</option>
+            <option value="FEMALE" {% if faculty.gender == 'FEMALE' %}selected{% endif %}>Female</option>
+            <option value="OTHERS" {% if faculty.gender == 'OTHERS' %}selected{% endif %}>Others</option>
+        </select>
+        <select name="department" class="w-full p-2 mb-4 border rounded">
+            <option value="BCA" {% if faculty.department == 'BCA' %}selected{% endif %}>BCA</option>
+            <option value="CS" {% if faculty.department == 'CS' %}selected{% endif %}>CS</option>
+            <option value="EL" {% if faculty.department == 'EL' %}selected{% endif %}>EL</option>
+            <option value="BCOM" {% if faculty.department == 'BCOM' %}selected{% endif %}>BCOM</option>
+        </select>
+        <input type="number" name="phno" value="{{ faculty.phno }}" class="w-full p-2 mb-4 border rounded">
+        <input type="email" name="email" value="{{ faculty.email }}" class="w-full p-2 mb-4 border rounded">
+        <input type="file" name="profilepic" class="w-full p-2 mb-4 border rounded">
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Save</button>
+    </form>
+</body>
+</html>

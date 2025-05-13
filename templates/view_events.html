@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Events</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; }
+        .date-filter { display: flex; gap: 10px; margin-bottom: 20px; justify-content: center; }
+        .date-filter input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        .date-filter button { padding: 8px 15px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background: #e9ecef; }
+        .no-events { text-align: center; color: #666; }
+        a { display: block; text-align: center; margin-top: 20px; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>College Event Calendar</h2>
+        <div class="date-filter">
+            <input type="date" id="startDate" placeholder="From Date">
+            <input type="date" id="endDate" placeholder="To Date">
+            <button onclick="filterEvents()">Search</button>
+        </div>
+        <table id="eventTable">
+            <thead>
+                <tr>
+                    <th>Srno</th>
+                    <th>Event Title</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="eventBody">
+                {% for event in events %}
+                    <tr data-date="{{ event.date|date:'Y-m-d' }}">
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ event.name }}</td>
+                        <td>{{ event.date|date:'d M Y' }}</td>
+                        <td>{{ event.description }}</td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="4" class="no-events">No events found.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% comment %} <a href="{% url 'add_event' %}">Add Event</a> {% endcomment %}
+    </div>
+
+    <script>
+        const events = [
+            {% for event in events %}
+                {
+                    srno: {{ forloop.counter }},
+                    name: "{{ event.name }}",
+                    date: "{{ event.date|date:'Y-m-d' }}",
+                    description: "{{ event.description }}"
+                },
+            {% endfor %}
+        ];
+
+        function filterEvents() {
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+            const eventBody = document.getElementById('eventBody');
+            eventBody.innerHTML = '';
+
+            const filteredEvents = events.filter(event => {
+                const eventDate = new Date(event.date);
+                return (!startDate || eventDate >= startDate) && (!endDate || eventDate <= endDate);
+            });
+
+            if (filteredEvents.length === 0) {
+                eventBody.innerHTML = '<tr><td colspan="4" class="no-events">No events found.</td></tr>';
+            } else {
+                filteredEvents.forEach(event => {
+                    eventBody.innerHTML += `
+                        <tr data-date="${event.date}">
+                            <td>${event.srno}</td>
+                            <td>${event.name}</td>
+                            <td>${new Date(event.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</td>
+                            <td>${event.description}</td>
+                        </tr>
+                    `;
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Timetable - All Branches & Years</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        .table-header {
+            background-color: #1e3a8a; /* Dark blue */
+            color: white;
+        }
+        .year1-row {
+            background-color: #dbeafe; /* Light blue */
+        }
+        .year2-row {
+            background-color: #bfdbfe; /* Slightly darker blue */
+        }
+        .year3-row {
+            background-color: #93c5fd; /* Medium blue */
+        }
+        .year4-row {
+            background-color: #60a5fa; /* Darker blue */
+        }
+        .pg-row {
+            background-color: #fef3c7; /* Light yellow */
+        }
+        .addon-row {
+            background-color: #d1fae5; /* Light green */
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6 text-center">
+        <h1 class="text-3xl font-bold">College Timetable - All Branches & Years</h1>
+        <p class="mt-2">Academic Year 2025</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-6">
+        <!-- UG Courses: Year 1 -->
+        <section id="year1">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 1</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="year1-row hover:bg-blue-100">
+                        <td>9:00 - 9:45</td>
+                        <td>Mathematics</td>
+                        <td>Life Skill</td>
+                        <td>Chemistry</td>
+                        <td>Mechanics</td>
+                        <td>Basics of Civil & Mechanical Engineering</td>
+                    </tr>
+                    <tr class="year1-row hover:bg-blue-100">
+                        <td>9:45 - 10:45</td>
+                        <td>Mechanics</td>
+                        <td>Mathematics</td>
+                        <td>Basics of Civil & Mechanical Engineering</td>
+                        <td>Life Skill</td>
+                        <td>Chemistry</td>
+                    </tr>
+                    <tr class="year1-row hover:bg-blue-100">
+                        <td>11:00 - 11:50</td>
+                        <td>Chemistry</td>
+                        <td>Mechanics</td>
+                        <td>Mathematics</td>
+                        <td>Life Skill</td>
+                        <td>Basics of Civil & Mechanical Engineering</td>
+                    </tr>
+                    <tr class="year1-row hover:bg-blue-100">
+                        <td>11:50 - 12:45</td>
+                        <td>Life Skill</td>
+                        <td>Chemistry</td>
+                        <td>Basics of Civil & Mechanical Engineering</td>
+                        <td>Mechanics</td>
+                        <td>Mathematics</td>
+                    </tr>
+                    <tr class="year1-row hover:bg-blue-100">
+                        <td>1:40 - 2:30</td>
+                        <td>Mechanics</td>
+                        <td>Basics of Civil & Mechanical Engineering</td>
+                        <td>Mathematics</td>
+                        <td>Chemistry</td>
+                        <td>Life Skill</td>
+                    </tr>
+                    <tr class="year1-row hover:bg-blue-100">
+                        <td>2:30 - 3:20</td>
+                        <td>Life Skill</td>
+                        <td>Mathematics</td>
+                        <td>Mechanics</td>
+                        <td>Chemistry</td>
+                        <td>Basics of Civil & Mechanical Engineering</td>
+                    </tr>
+                    <tr class="year1-row hover:bg-blue-100">
+                        <td>3:20 - 4:15</td>
+                        <td>Chemistry</td>
+                        <td>Basics of Civil & Mechanical Engineering</td>
+                        <td>Mechanics</td>
+                        <td>Life Skill</td>
+                        <td>Mathematics</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('year1', 'timetable_btech_year1.html')">Download Timetable</button>
+        </section>
+
+        <!-- UG Courses: Year 2 -->
+        <section id="year2">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 2</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="year2-row hover:bg-blue-200">
+                        <td>9:00 - 9:45</td>
+                        <td>Physics</td>
+                       
+                        <td>Engineering Graphics</td>
+                        <td>Mathematics</td>
+                        <td>Basics of Electrical & Electronics Engineering</td>
+                        <td>Professional Communication</td>
+                    </tr>
+                    <tr class="year2-row hover:bg-blue-200">
+                        <td>9:45 - 10:45</td>
+                        <td>Professional Communication</td>
+                        <td>Physics</td>
+                        
+                        <td>Engineering Graphics</td>
+                        <td>Basics of Python Programming</td>
+                        <td>Basics of Electrical & Electronics Engineering</td>
+                    </tr>
+                    <tr class="year2-row hover:bg-blue-200">
+                        <td>11:00 - 11:50</td>
+                        <td>Engineering Graphics</td>
+                        <td>Mathematics</td>
+                        <td>Basics of Electrical & Electronics Engineering</td>
+                        <td>Basics of Python Programming</td>
+                        <td>Physics</td>
+                       
+                    </tr>
+                    <tr class="year2-row hover:bg-blue-200">
+                        <td>11:50 - 12:45</td>
+                        <td>Basics of Electrical & Electronics Engineering</td>
+                        <td>Professional Communication</td>
+                        <td>Physics</td>
+                        <td>Basics of Python Programming</td>
+                        <td>Mathematics</td>
+                       
+                    </tr>
+                    <tr class="year2-row hover:bg-blue-200">
+                        <td>1:40 - 2:30</td>
+                        <td>Basics of Python Programming</td>
+                        <td>Mathematics</td>
+                        <td>Professional Communication</td>
+                        <td>Physics</td>
+                        <td>Engineering Graphics</td>
+                        
+                    </tr>
+                    <tr class="year2-row hover:bg-blue-200">
+                        <td>2:30 - 3:20</td>
+                        <td>Mathematics</td>
+                        <td>Basics of Electrical & Electronics Engineering</td>
+                        <td>Basics of Python Programming</td>
+                        <td>Professional Communication</td>
+                        <td>Engineering Graphics</td>
+                        
+                    </tr>
+                    <td>3:20 - 4:15</td>
+                    <td>Mathematics</td>
+                    <td>Basics of Electrical & Electronics Engineering</td>
+                    <td>Basics of Python Programming</td>
+                    <td>Professional Communication</td>
+                    <td>Engineering Graphics</td>
+                    
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('year2', 'timetable_btech_year2.html')">Download Timetable</button>
+        </section>
+
+        <!-- UG Courses: Year 3 -->
+        <section id="year3">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 3</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="year3-row hover:bg-blue-300">
+                        <td>9:00 - 9:45</td>
+                     
+                        <td>Logic System Design</td>
+                        <td>Sustainable Engineering</td>
+                        <td>Data Structure</td>
+                        <td>Object Oriented Programming using Java</td>
+                        <td>Discrete Mathematical Structures</td>
+                    </tr>
+                    <tr class="year3-row hover:bg-blue-300">
+                        <td>9:45 - 10:45</td>
+                        
+                        <td>Discrete Mathematical Structures</td>
+                        <td>Logic System Design</td>
+                        <td>Sustainable Engineering</td>
+                        <td>Design Engineering</td>
+                        <td>Object Oriented Programming using Java</td>
+                    </tr>
+                    <tr class="year3-row hover:bg-blue-300">
+                        <td>11:00 - 11:50</td>
+                       
+                        <td>Sustainable Engineering</td>
+                        <td>Design Engineering</td>
+                        <td>Object Oriented Programming using Java</td>
+                        <td>Discrete Mathematical Structures</td>
+                        <td>Data Structure</td>
+                    </tr>
+                    <tr class="year3-row hover:bg-blue-300">
+                        <td>11:50 - 12:45</td>
+                      
+                        <td>Discrete Mathematical Structures</td>
+                        <td>Design Engineering</td>
+                        <td>Sustainable Engineering</td>
+                        <td>Data Structure</td>
+                        <td>Logic System Design</td>
+                    </tr>
+                    <tr class="year3-row hover:bg-blue-300">
+                        <td>1:40 - 2:30</td>
+                        <td>Design Engineering</td>
+                        <td>Logic System Design</td>
+                      
+                        <td>Data Structure</td>
+                        <td>Object Oriented Programming using Java</td>
+                        <td>Discrete Mathematical Structures</td>
+                    </tr>
+                    <td>2:30 - 3:20</td>
+                    <td>Design Engineering</td>
+                    <td>Logic System Design</td>
+                    <td>Sustainable Engineering</td>
+                    <td>Data Structure</td>
+                    <td>Object Oriented Programming using Java</td>
+                   
+                </tr>
+                <td>3:20 - 4:15</td>
+                <td>Design Engineering</td>
+                <td>Logic System Design</td>
+                <td>Data Structure</td>
+                <td>Object Oriented Programming using Java</td>
+                <td>Discrete Mathematical Structures</td>
+            </tr>
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('year3', 'timetable_btech_year3.html')">Download Timetable</button>
+        </section>
+
+        <!-- UG Courses: Year 4 -->
+        <section id="year4">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 4</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="year4-row hover:bg-blue-400">
+                        <td>9:00 - 9:45</td>
+                        <td>Database Management System</td>
+                        <td>Constitution Of India</td>
+                        <td>Operating System</td>
+                        <td>Professional Ethics</td>
+                        <td>Computer Organization and Architecture</td>
+                       
+                    </tr>
+                    <tr class="year4-row hover:bg-blue-400">
+                        <td>9:45 - 10:45</td>
+                        <td>Professional Ethics</td>
+                        <td>Computer Organization and Architecture</td>
+                        <td>Constitution Of India</td>
+                        <td>Graphics Theory</td>
+                        <td>Database Management System</td>
+                       
+                    </tr>
+                    <tr class="year4-row hover:bg-blue-400">
+                        <td>11:00 - 11:50</td>
+                        <td>Graphics Theory</td>
+                        <td>Database Management System</td>
+                        <td>Computer Organization and Architecture</td>
+                        <td>Operating System</td>
+                        <td>Professional Ethics</td>
+                    </tr>
+                    <tr class="year4-row hover:bg-blue-400">
+                        <td>11:50 - 12:45</td>
+                        <td>Graphics Theory</td>
+                        <td>Operating System</td>
+                        <td>Database Management System</td>
+                        <td>Constitution Of India</td>
+                        <td>Computer Organization and Architecture</td>
+                    </tr>
+                    <tr class="year4-row hover:bg-blue-400">
+                        <td>1:40 - 2:30</td>
+                        <td>Operating System</td>
+                        <td>Graphics Theory</td>
+                        <td>Professional Ethics</td>
+                        <td>Constitution Of India</td>
+                        <td>Computer Organization and Architecture</td>
+                    </tr>
+                    <tr class="year4-row hover:bg-blue-400">
+                        <td>2:30 - 3:20</td>
+                        <td>Professional Ethics</td>
+                        <td>Operating System</td>
+                        <td>Constitution Of India</td>
+                        <td>Graphics Theory</td>
+                        <td>Database Management System</td>
+                    </tr>
+                    <tr class="year4-row hover:bg-blue-400">
+                        <td>3:20 - 4:15</td>
+                        <td>Database Management System</td>
+                        <td>Operating System</td>
+                        <td>Professional Ethics</td>
+                        <td>Constitution Of India</td>
+                        <td>Computer Organization and Architecture</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('year4', 'timetable_btech_year4.html')">Download Timetable</button>
+        </section>
+
+        <!-- PG Courses -->
+        <section id="pg">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 5</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>9:00 - 9:45</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                        <td>Management of Software System</td>
+                        <td>Computer Networks</td>
+                        <td>Disaster Management</td>
+                        <td>Formal Languages and Automata Theory</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>9:45 - 10:45</td>
+                        <td>Disaster Management</td>
+                        <td>Computer Networks</td>
+                        <td>Formal Languages and Automata Theory</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                        <td>Management of Software System</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>11:00 - 11:50</td>
+                        <td>Formal Languages and Automata Theory</td>
+                        <td>Management of Software System</td>
+                        <td>Disaster Management</td>
+                        <td>Computer Networks</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>11:50 - 12:45</td>
+                        <td>Computer Networks</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                        <td>Management of Software System</td>
+                        <td>Formal Languages and Automata Theory</td>
+                        <td>Disaster Management</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>1:40 - 2:30</td>
+                        <td>Management of Software System</td>
+                        <td>Disaster Management</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                        <td>Formal Languages and Automata Theory</td>
+                        <td>Computer Networks</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>2:30 - 3:20</td>
+                        <td>Computer Networks</td>
+                        <td>Disaster Management</td>
+                        <td>Management of Software System</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                        <td>Formal Languages and Automata Theory</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>3:20 - 4:15</td>
+                        <td>Disaster Management</td>
+                        <td>Formal Languages and Automata Theory</td>
+                        <td>Computer Networks</td>
+                        <td>Microprocessors and Microcontrollers</td>
+                        <td>Management of Software System</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('pg', 'timetable_pg.html')">Download Timetable</button>
+        </section>
+
+        <!-- Add-on Courses -->
+        <section id="addon">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 6</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="addon-row hover:bg-green-100">
+                        <td>9:00 - 9:45</td>
+                        <td>Elective 1</td>
+                        <td>Algorithm Analysis and Design</td>
+                        <td>Industrial Economics & Foreign Trade</td>
+                        <td>Compiler Design</td>
+                        <td>Computer Graphics and Image Processing</td>
+                    </tr>
+                    <tr class="addon-row hover:bg-green-100">
+                        <td>9:45 - 10:45</td>
+                        <td>Computer Graphics and Image Processing</td>
+                        <td>Elective 1</td>
+                        <td>Algorithm Analysis and Design</td>
+                        <td>Compiler Design</td>
+                        <td>Industrial Economics & Foreign Trade</td>
+                    </tr>
+                    <tr class="addon-row hover:bg-green-100">
+                        <td>11:00 - 11:50</td>
+                        <td>Algorithm Analysis and Design</td>
+                        <td>Industrial Economics & Foreign Trade</td>
+                        <td>Elective 1</td>
+                        <td>Computer Graphics and Image Processing</td>
+                        <td>Compiler Design</td>
+                    </tr>
+                    <tr class="addon-row hover:bg-green-100">
+                        <td>11:50 - 12:45</td>
+                        <td>Industrial Economics & Foreign Trade</td>
+                        <td>Computer Graphics and Image Processing</td>
+                        <td>Compiler Design</td>
+                        <td>Elective 1</td>
+                        <td>Algorithm Analysis and Design</td>
+                    </tr>
+                    <tr class="addon-row hover:bg-green-100">
+                        <td>1:40 - 2:30</td>
+                        <td>Algorithm Analysis and Design</td>
+                        <td>Compiler Design</td>
+                        <td>Elective 1</td>
+                        <td>Computer Graphics and Image Processing</td>
+                        <td>Industrial Economics & Foreign Trade</td>
+                    </tr>
+                    <tr class="addon-row hover:bg-green-100">
+                        <td>2:30 - 3:20</td>
+                        <td>Compiler Design</td>
+                        <td>Computer Graphics and Image Processing</td>
+                        <td>Industrial Economics & Foreign Trade</td>
+                        <td>Elective 1</td>
+                        <td>Algorithm Analysis and Design</td>
+                    </tr>
+                    <tr class="addon-row hover:bg-green-100">
+                        <td>3:20 - 4:15</td>
+                        <td>Elective 1</td>
+                        <td>Compiler Design</td>
+                        <td>Algorithm Analysis and Design</td>
+                        <td>Industrial Economics & Foreign Trade</td>
+                        <td>Computer Graphics and Image Processing</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('addon', 'timetable_addon.html')">Download Timetable</button>
+        </section>
+        <section id="pg">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 7</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>9:00 - 9:45</td>
+                        <td>Elective 2</td>
+                        <td>Open Elective</td>
+                        <td>Industrial Safety Engineering</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Open Elective</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>9:45 - 10:45</td>
+                        <td>Open Elective</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Elective 2</td>
+                        <td>Industrial Safety Engineering</td>
+                        <td>Artificial Intelligence</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>11:00 - 11:50</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Elective 2</td>
+                        <td>Open Elective</td>
+                        <td>Industrial Safety Engineering</td>
+                        <td>Elective 2</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>11:50 - 12:45</td>
+                        <td>Elective 2</td>
+                        <td>Industrial Safety Engineering</td>
+                        <td>Open Elective</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Elective 2</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>1:40 - 2:30</td>
+                        <td>Open Elective</td>
+                        <td>Elective 2</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Open Elective</td>
+                        <td>Industrial Safety Engineering</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>2:30 - 3:20</td>
+                        <td>Industrial Safety Engineering</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Elective 2</td>
+                        <td>Open Elective</td>
+                        <td>Industrial Safety Engineering</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>3:20 - 4:15</td>
+                        <td>Open Elective</td>
+                        <td>Artificial Intelligence</td>
+                        <td>Industrial Safety Engineering</td>
+                        <td>Elective 2</td>
+                        <td>Artificial Intelligence</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('pg', 'timetable_pg.html')">Download Timetable</button>
+        </section>
+        <section id="pg">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4">SEMESTER 8</h2>
+            <table class="w-full border border-gray-300 shadow-lg">
+                <thead class="table-header">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>9:00 - 9:45</td>
+                        <td>Elective 3</td>
+                        <td>Elective 4</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 3</td>
+                        <td>Elective 5</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>9:45 - 10:45</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 5</td>
+                        <td>Elective 4</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 3</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>11:00 - 11:50</td>
+                        <td>Elective 3</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 5</td>
+                        <td>Elective 4</td>
+                        <td>Distributed Computing</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>11:50 - 12:45</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 5</td>
+                        <td>Elective 4</td>
+                        <td>Elective 3</td>
+                        <td>Elective 3</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>1:40 - 2:30</td>
+                        <td>Elective 5</td>
+                        <td>Elective 5</td>
+                        <td>Elective 3</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 4</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>2:30 - 3:20</td>
+                        <td>Elective 3</td>
+                        <td>Elective 4</td>
+                        <td>Elective 4</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 5</td>
+                    </tr>
+                    <tr class="pg-row hover:bg-yellow-100">
+                        <td>3:20 - 4:15</td>
+                        <td>Elective 4</td>
+                        <td>Elective 5</td>
+                        <td>Distributed Computing</td>
+                        <td>Elective 3</td>
+                        <td>Distributed Computing</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700" onclick="downloadTable('pg', 'timetable_pg.html')">Download Timetable</button>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-4 text-center">
+        <p>© 2025 College Name. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Download Functionality -->
+    <script>
+        function downloadTable(sectionId, filename) {
+            // Get the section (including heading and table)
+            const section = document.getElementById(sectionId);
+            const tableHtml = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>${section.querySelector('h2').textContent}</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; }
+                        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                        th, td { padding: 12px; text-align: center; border: 1px solid #ccc; }
+                        .table-header { background-color: #1e3a8a; color: white; }
+                        .year1-row { background-color: #dbeafe; }
+                        .year2-row { background-color: #bfdbfe; }
+                        .year3-row { background-color: #93c5fd; }
+                        .year4-row { background-color: #60a5fa; }
+                        .pg-row { background-color: #fef3c7; }
+                        .addon-row { background-color: #d1fae5; }
+                    </style>
+                </head>
+                <body>
+                    <h2>${section.querySelector('h2').textContent}</h2>
+                    ${section.querySelector('table').outerHTML}
+                </body>
+                </html>
+            `;
+
+            // Create a Blob with the HTML content
+            const blob = new Blob([tableHtml], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

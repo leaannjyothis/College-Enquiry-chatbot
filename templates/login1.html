@@ -1,0 +1,246 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% load widget_tweaks %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    Font Icon
+    <link rel="stylesheet" href="{% static 'assets2/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/vendor/nouislider/nouislider.min.css' %}">
+
+    Main css
+    <link rel="stylesheet" href="{% static 'assets2/css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'assets2/images/form-img.jpg' %}" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p>while seats are available !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form action="" method="POST" class="register-form" >
+                        {% csrf_token %} 
+                        <div class="form-row">
+                            <-- <div class="form-group"> -->
+                                <!-- <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    {% render_field form.first_name class='form-control' %}
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    {% render_field form.last_name class='form-control' %} -->
+
+
+                                <!-- </div>
+                        
+                                <div class="form-input">
+                                    <label for="company" class="required">Username</label>
+                                    {% render_field form.username class='form-control' %}
+
+                                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                              
+                                <!-- <div class="form-input">
+                                    <label for="phone_number" class="required">Email</label>
+                                    {% render_field form.email class='form-control' %}
+                                </div> -->
+                                <!-- <div class="form-input">
+                                    <label for="chequeno">Password</label>
+                                    {% render_field form.password class='form-control'  pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" %}
+                                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                                <!-- <div class="form-input">
+                                    <label for="chequeno">Registration Number </label>
+                                    {% render_field form1.adno class='form-control' %}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-select">
+                                    <div class="form-input">
+                                        <label for="last_name" class="required">Address</label>
+                                        {% render_field form1.address class='form-control' %}
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="chequeno">Phone Number</label>
+                                        {% render_field form1.phone class='form-control' pattern="[7-9]{1}[0-9]{9}" %}
+                                      
+                                    </div>
+                                    <div class="label-flex">
+                                        <label for="dep" >Department</label>
+                                    </div>
+                                    <div class="select-list" >
+                                         <select name="dep" id="dep" style="padding: 14px 45px;">
+                                            {% render_field form1.dep class='form-control' style="padding:14px 45px;" %}
+
+                                        </select>
+                                    </div>
+                                    <div class="label-flex">
+                                        <label for="dep" >Gender</label>
+                                    </div>
+                                    <div class="select-list" >
+                                        <select name="dep" id="dep" style="padding: 14px 45px;">
+                                            {% render_field form1.gen class='form-control' style="padding:14px 45px;" %}
+
+                                        </select>
+                                    </div>
+                                    
+                                </div> -->
+                               
+
+                        <!-- <div class="form-submit"> -->
+                            <!-- <input type="submit" class="submit" value="Login"  /> -->
+                            <!-- <input type="submit" value="Login" class="submit" id="submit" name="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+    <!-- JS -->
+    <!-- <script src="{% static 'assets2/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'assets2/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets2/vendor/wnumb/wNumb.js' %}"></script>
+    <script src="{% static 'assets2/vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets2/vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{% static 'assets2/js/main.js' %}"></script> -->
+<!-- </body><This templates was made by Colorlib (https://colorlib.com) -->
+<!-- </html> -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+    {% load widget_tweaks %}
+<head>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+#bg {
+  background-image: url('/static/images/1490681693phpOCuewX_g.jpg');
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: blur(5px);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #4A4A4A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  width: 350px;
+  position: relative;
+}
+form .form-field::before {
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  color: #888888;
+  content: " ";
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+form .form-field:nth-child(1)::before {
+  background-image: url('/static/images/user.png');
+  width: 20px;
+  height: 20px;
+  top: 15px;
+}
+form .form-field:nth-child(2)::before {
+  background-image: url('/static/images/lock.png');
+  width: 16px;
+  height: 16px;
+}
+form .form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+form input {
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  padding: 0.9rem 0.7rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  color: #4A4A4A;
+  text-indent: 40px;
+}
+form .btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.9rem 2.5rem;
+  text-align: center;
+  background-color: #47AB11;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+}
+    </style>
+  <meta charset="UTF-8">
+  <title>Login Page with Background Image Example</title>
+  <!-- <link rel="stylesheet" href="static/css/stylecopy.css"> -->
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="bg"></div>
+
+<form action="" method="POST">
+    <center><h1><b>LOGIN</b></h1></center>
+    {% csrf_token %}
+  <div class="form-field">
+    <!-- <input type="email" placeholder="Email / Username" required/> -->
+    {% render_field form.username class='form-control' placeholder="Username" %}
+
+  </div>
+  
+  <div class="form-field">
+    <!-- <input type="password" placeholder="Password" required/>  -->
+    {% render_field form.password class='form-control' placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"%}
+</div>
+  <div class="form-field">
+    <button class="btn" type="submit">Log in</button>
+  </div>
+</form>
+<!-- partial -->
+  
+</body>
+</html>

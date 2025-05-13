@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% load widget_tweaks %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'assets2/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets2/vendor/nouislider/nouislider.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'assets2/css/style.css' %}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'assets2/images/form-img.jpg' %}" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p>while seats are available !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" >
+                        {% csrf_token %} 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    {% render_field form3.first_name class='form-control' %}
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    {% render_field form3.last_name class='form-control' %}
+
+
+                                </div>
+                                
+                                <div class="form-input">
+                                    <label for="company" class="required">Username</label>
+                                    {% render_field form3.username class='form-control' %}
+
+                                </div>
+                              
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Email</label>
+                                    {% render_field form3.email class='form-control' %}
+                                </div>
+                                <div class="form-input">
+                                    <label for="chequeno">Password</label>
+                                    {% render_field form3.password class='form-control' %}
+                                </div>
+                                <div class="form-input">
+                                    <label for="chequeno">Registration Number </label>
+                                    {% render_field form4.adno class='form-control' %}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-select">
+                                    <div class="form-input">
+                                        <label for="last_name" class="required">Address</label>
+                                        {% render_field form4.address class='form-control' %}
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="chequeno">Phone Number</label>
+                                        {% render_field form4.phone class='form-control' pattern="[7-9]{1}[0-9]{9}" %}
+                                      
+                                    </div>
+                                    <div class="label-flex">
+                                        <label for="dep" >Department</label>
+                                    </div>
+                                    <div class="select-list" >
+                                        <!-- <select name="dep" id="dep" style="padding: 14px 45px;"> -->
+                                            {% render_field form4.dep class='form-control' style="padding:14px 45px;" %}
+
+                                        </select>
+                                    </div>
+                                    <div class="label-flex">
+                                        <label for="dep" >Gender</label>
+                                    </div>
+                                    <div class="select-list" >
+                                        <!-- <select name="dep" id="dep" style="padding: 14px 45px;"> -->
+                                            {% render_field form4.gen class='form-control' style="padding:14px 45px;" %}
+
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                               
+
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                          
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'assets2/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'assets2/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets2/vendor/wnumb/wNumb.js' %}"></script>
+    <script src="{% static 'assets2/vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets2/vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{% static 'assets2/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

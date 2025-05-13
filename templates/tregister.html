@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <form method="POST" class="bg-white p-6 rounded-lg shadow-lg w-96">
+        {% csrf_token %}
+        <h2 class="text-2xl font-bold mb-4 text-center">Register</h2>
+        <input type="text" name="name" placeholder="Name" class="w-full p-2 mb-4 border rounded">
+        <select name="gender" class="w-full p-2 mb-4 border rounded">
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+            <option value="OTHERS">Others</option>
+        </select>
+        <select name="department" class="w-full p-2 mb-4 border rounded">
+            <option value="BCA">ME</option>
+            <option value="CS">CSE</option>
+            <option value="EL">EL</option>
+            <option value="BCOM">EEE</option>
+            <option value="BCOM">AI</option>
+            <option value="BCOM">CE</option>
+            <option value="BCOM">CSD</option>
+            <option value="BCOM">MBA</option>
+        </select>
+        <input type="number" name="phno" placeholder="Phone Number" class="w-full p-2 mb-4 border rounded">
+        <input type="email" name="email" placeholder="Email" class="w-full p-2 mb-4 border rounded">
+        <input type="password" name="password" placeholder="Password" class="w-full p-2 mb-4 border rounded">
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Register</button>
+        {% if messages %}
+            {% for message in messages %}
+                <p class="text-red-500 text-center mt-2">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <br> <br>
+        <a href='/login/'>Login</a>
+    </form>
+    
+</body>
+</html>

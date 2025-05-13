@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #007bff;
+            color: white;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            font-size: 16px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .main-content h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="/userlist/">Manage Users</a></li>
+        <!---   <li><a href="#">Admissions</a></li>  -->
+            <li><a href="#">Bus Fee</a></li>
+        <!--    <li><a href="#">Course Information</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Reports</a></li>    -->
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome, Admin!</h1>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Total Students</h3>
+                <p>1,250</p>
+            </div>
+            <div class="card">
+                <h3>New Applications</h3>
+                <p>85</p>
+            </div>
+            <div class="card">
+                <h3>Events Scheduled</h3>
+                <p>12</p>
+            </div>
+            <div class="card">
+                <h3>Pending Requests</h3>
+                <p>23</p>
+            </div>
+        </div>
+        <a href="/logout1/" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>
